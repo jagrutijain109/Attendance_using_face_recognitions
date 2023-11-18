@@ -1,0 +1,224 @@
+import face_recognition
+import numpy as np
+from PIL import Image, ImageDraw
+from IPython.display import display
+from google.colab.patches import cv2_imshow
+import cv2
+from datetime import datetime
+
+face_1 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/kashwi.jpeg")
+face_1_encoding = face_recognition.face_encodings(face_1)[0]
+
+face_2 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/maithili.jpeg")
+face_2_encoding = face_recognition.face_encodings(face_2)[0]
+
+face_3 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/nikita.jpeg")
+face_3_encoding = face_recognition.face_encodings(face_3)[0]
+
+face_4 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/jagruti.jpeg")
+face_4_encoding = face_recognition.face_encodings(face_4)[0]
+
+face_5 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/Adarsh_Chauhan .jpg")
+face_5_encoding = face_recognition.face_encodings(face_5)[0]
+
+face_6 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/Avantika_Raut.jpg")
+face_6_encoding = face_recognition.face_encodings(face_6)[0]
+
+face_7 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/kanak_budhlani.jpg")
+face_7_encoding = face_recognition.face_encodings(face_7)[0]
+
+face_8 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/Diptanshu.jpg")
+face_8_encoding = face_recognition.face_encodings(face_8)[0]
+
+face_9 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/Komal_sakhare.jpg")
+face_9_encoding = face_recognition.face_encodings(face_9)[0]
+
+face_10 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/Rohan kadu.jpg")
+face_10_encoding = face_recognition.face_encodings(face_10)[0]
+
+face_11 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/akansha.jpg")
+face_11_encoding = face_recognition.face_encodings(face_11)[0]
+
+face_12 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/ananya.jpg")
+face_12_encoding = face_recognition.face_encodings(face_12)[0]
+
+face_13 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/apeksha.jpg")
+face_13_encoding = face_recognition.face_encodings(face_13)[0]
+
+face_14 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/ayaan.jpg")
+face_14_encoding = face_recognition.face_encodings(face_14)[0]
+
+face_15 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/chirag_bansod.jpg")
+face_15_encoding = face_recognition.face_encodings(face_15)[0]
+
+face_16 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/diksha.jpg")
+face_16_encoding = face_recognition.face_encodings(face_16)[0]
+
+face_17 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/hukum.jpg")
+face_17_encoding = face_recognition.face_encodings(face_17)[0]
+
+face_18 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/ishashah.jpg")
+face_18_encoding = face_recognition.face_encodings(face_18)[0]
+
+face_19 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/jagannath_Pradhan.jpg")
+face_19_encoding = face_recognition.face_encodings(face_19)[0]
+
+face_20 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/kanakmahalle.jpg")
+face_20_encoding = face_recognition.face_encodings(face_20)[0]
+
+face_21 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/khushal_dhok.jpg")
+face_21_encoding = face_recognition.face_encodings(face_21)[0]
+
+face_22 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/maitreya.jpg")
+face_22_encoding = face_recognition.face_encodings(face_22)[0]
+
+face_23 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/mayur.jpg")
+face_23_encoding = face_recognition.face_encodings(face_23)[0]
+
+face_24 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/ekata.jpg")
+face_24_encoding = face_recognition.face_encodings(face_24)[0]
+
+face_25 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/nayan_nagrare.jpg")
+face_25_encoding = face_recognition.face_encodings(face_25)[0]
+
+face_26 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/nidhi_patekar (1).jpg")
+face_26_encoding = face_recognition.face_encodings(face_26)[0]
+
+face_27 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/nidhi_singh.jpg")
+face_27_encoding = face_recognition.face_encodings(face_27)[0]
+
+face_28 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/omkar sahare.jpg")
+face_28_encoding = face_recognition.face_encodings(face_28)[0]
+
+face_29 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/sakshi_priya.jpg")
+face_29_encoding = face_recognition.face_encodings(face_29)[0]
+
+face_30 = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/achal.jpg")
+face_30_encoding = face_recognition.face_encodings(face_30)[0]
+
+
+known_face_encodings = [
+    face_1_encoding,
+    face_2_encoding,
+    face_3_encoding,
+    face_4_encoding,
+    face_5_encoding,
+    face_6_encoding,
+    face_7_encoding,
+    face_8_encoding,
+    face_9_encoding,
+    face_10_encoding,
+    face_11_encoding,
+    face_12_encoding,
+    face_13_encoding,
+    face_14_encoding,
+    face_15_encoding,
+    face_16_encoding,
+    face_17_encoding,
+    face_18_encoding,
+    face_19_encoding,
+    face_20_encoding,
+    face_21_encoding,
+    face_22_encoding,
+    face_23_encoding,
+    face_24_encoding,
+    face_25_encoding,
+    face_26_encoding,
+    face_27_encoding,
+    face_28_encoding,
+    face_29_encoding,
+    face_30_encoding
+]
+known_face_names = [
+    "Kashwi",
+    "Maithili",
+    "Nikita",
+    "Jagruti",
+    "Adarsh",
+    "Avantika",
+    "Kanak Budalani",
+    "Diptanshu",
+    "Komal",
+    "Rohan",
+    "Akansha",
+    "Ananya",
+    "Apeksha",
+    "Ayaan",
+    "Chirag",
+    "Diksha",
+    "Hukum",
+    "Isha",
+    "Jagannath",
+    "Kanak Mahalle",
+    "Khushal",
+    "Maitreya",
+    "Mayur",
+    "Ekata",
+    "Nayan Nagrare",
+    "Nidhi Patekar",
+    "Nidhi Singh",
+    "Omkar",
+    "Sakshi Priya",
+    "Achal"
+]
+print("Done learning and creating profiles")
+
+
+def makeAttendanceEntry(name):
+    with open('/content/drive/MyDrive/face_recognition/8-06-2023.csv','r+') as FILE:
+        allLines = FILE.readlines()
+        attendanceList = []
+        for line in allLines:
+            entry = line.split(',')
+            attendanceList.append(entry[0])
+        if name not in attendanceList:
+            now = datetime.now()
+            dtString = now.strftime('%d/%b/%Y, %H:%M:%S')
+            FILE.writelines(f'\n{name},{dtString}')
+
+unknown_image = face_recognition.load_image_file("/content/drive/MyDrive/face_recognition/testing_cl.jpg")
+
+face_locations = face_recognition.face_locations(unknown_image)
+face_encodings = face_recognition.face_encodings(unknown_image, face_locations)
+
+pil_image = Image.fromarray(unknown_image)
+draw = ImageDraw.Draw(pil_image)
+
+for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
+    # See if the face is a match for the known face(s)
+    matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+
+    name = "Unknown"
+
+    face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
+    best_match_index = np.argmin(face_distances)
+    if matches[best_match_index]:
+        name = known_face_names[best_match_index]
+
+    # Draw a box around the face using the Pillow module
+    draw.rectangle(((left, top), (right, bottom)), outline=(0, 255, 255))
+    print(name)
+    makeAttendanceEntry(name)
+    # Draw a label with a name below the face
+    text_width, text_height = draw.textsize(name)
+    # draw.rectangle(((left, bottom - text_height - 10), (right, bottom)), fill=(0, 0, 255), outline=(0, 0, 255))
+    draw.text((left + 6, bottom - text_height + 25), name, fill=(0, 0, 0, 0))
+
+
+# Remove the drawing library from memory as per the Pillow docs
+del draw
+
+# Display the resulting image
+display(pil_image)
+
+import csv
+
+# opening the CSV file
+with open('/content/drive/MyDrive/face_recognition/8-06-2023.csv', mode ='r')as file:
+
+# reading the CSV file
+  csvFile = csv.reader(file)
+
+# displaying the contents of the CSV file
+  for lines in csvFile:
+		  print(lines)
